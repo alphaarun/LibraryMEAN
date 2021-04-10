@@ -24,7 +24,7 @@ app.use('/Author',authorRouter);
 app.use('/Genre',genreRouter);
 app.use('/LibraryBranch',branchRouter);
 app.use('/PublicationCompany',pubCompanyRouter);
-//app.use('/Book',bookRouter);
+app.use('/Book',bookRouter);
 
 
 const port = 5000;

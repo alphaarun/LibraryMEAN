@@ -57,3 +57,15 @@ exports.updateAuthor = (req,res)=>{
     })
 }
 
+exports.updateAuthorForBook = (req,res)=>{
+    console.log("updating the Author");
+    AuthorSchema.findByIdAndUpdate(req.params.id,{$set:req.body},(err,data)=>{
+        console.log(err);
+        console.log(data)
+        if (err) {
+            console.log(err)
+        }
+        res.send(data);
+    })
+}
+
