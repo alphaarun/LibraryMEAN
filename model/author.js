@@ -5,8 +5,8 @@ let AuthorSchema = mongoose.Schema,
 
 let authorSchema = new AuthorSchema({
     _id   : mongoose.Schema.Types.ObjectId,
-    name  : String,
+    name  : { type :String, required : true,unique: true },
     books : [{ type : mongoose.Schema.Types.ObjectId, ref : 'book', required : false }]
-});
+},{ versionKey: false });
 
 module.exports = mongoose.model('author',authorSchema);

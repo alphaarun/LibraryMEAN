@@ -1,7 +1,7 @@
 var LibrarySchema = require('../model/library-branch')
 let mongoose = require('mongoose')
 
-exports.getBranchs= (req,res)=>{
+exports.getBranches= (req,res)=>{
     console.log("getting All the Branchs")
     LibrarySchema.find((err,data)=>{
         if(err) return next(err)  
@@ -19,8 +19,10 @@ exports.createBranch = (req,res)=>{
 
     Branch.save((err,data)=>{
         if (err) {
-            console.log(err)
-            //return next(err)
+            console.log(err);
+            res.status(500).json({
+                error : err
+            })
         }
         res.send("Branch Created : "+data)
     })
@@ -30,7 +32,10 @@ exports.getBranch = (req,res)=>{
     console.log("getting Branch "+req.params.id);
     LibrarySchema.findById(req.params.id,(err,data)=>{
         if (err) {
-            console.log(err)
+            console.log(err);
+            res.status(500).json({
+                error : err
+            })
         }
         res.send(data);
     })
@@ -40,7 +45,10 @@ exports.deleteBranch = (req,res)=>{
     console.log("deleting the Branch");
     LibrarySchema.findByIdAndDelete(req.params.id,(err,data)=>{
         if (err) {
-            console.log(err)
+            console.log(err);
+            res.status(500).json({
+                error : err
+            })
         }
         res.send(data);
     })
@@ -52,7 +60,10 @@ exports.updateBranch = (req,res)=>{
         console.log(err);
         console.log(data)
         if (err) {
-            console.log(err)
+            console.log(err);
+            res.status(500).json({
+                error : err
+            })
         }
         res.send(data);
     })

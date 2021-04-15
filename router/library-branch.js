@@ -3,7 +3,7 @@ let branchRouter = express.Router()
 let controller = require('../controller/library-branch')
 
 //get all the branch
-branchRouter.get('/',controller.getBranchs)
+branchRouter.get('/',controller.getBranches)
 
 //get one branch
 branchRouter.get('/:id',controller.getBranch)
@@ -12,9 +12,9 @@ branchRouter.get('/:id',controller.getBranch)
 branchRouter.post('/create',controller.createBranch)
 
 //update one branch
-branchRouter.put('/update/:id',controller.updateBranch)
+branchRouter.put('/:id',controller.updateBranch)
 
 //delete one branch
-branchRouter.delete('/delete/:id',controller.deleteBranch)
+branchRouter.delete('/:id',controller.deleteBranch)
 
 module.exports=branchRouter;

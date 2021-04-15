@@ -12,9 +12,9 @@ routePubCompany.get('/:id',controller.getPubCompany)
 routePubCompany.post('/create',controller.createPubCompany)
 
 //update one publication company
-routePubCompany.put('/update/:id',controller.updatePubCompany)
+routePubCompany.put('/:id',controller.updatePubCompany)
 
 //delete one publication company
-routePubCompany.delete('/delete/:id',controller.deletePubCompany)
+routePubCompany.delete('/:id',controller.deletePubCompany)
 
 module.exports=routePubCompany;

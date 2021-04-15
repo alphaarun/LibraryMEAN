@@ -15,6 +15,6 @@ routeBook.get('/',controller.getBooks)
 // routeBook.put('/update/:id',controller.updateBook)
 
 // //delete a book
-// routeBook.delete('/delete/:id',controller.deleteBook)
+ routeBook.delete('/:id',controller.deleteBook)
 
 module.exports=routeBook;

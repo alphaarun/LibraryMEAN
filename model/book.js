@@ -8,12 +8,12 @@ let BookSchema = mongoose.Schema,
 
 let bookSchema = new BookSchema({
     _id       : mongoose.Schema.Types.ObjectId, 
-    name      : { type : String },
+    name      : { type :String, required : true,unique: true },
     author    : { type : mongoose.Schema.Types.ObjectId, required : true, ref : 'author' },
     genre     : { type : mongoose.Schema.Types.ObjectId, required : true, ref : 'genre' },
     publisher : { type : mongoose.Schema.Types.ObjectId, required : true, ref : 'publishCompany' },
     branch    : { type : mongoose.Schema.Types.ObjectId, required : true, ref : 'branch' },
-    price     : Number
-});
+    price     : { type :String, required : true, unique: false },
+},{ versionKey: false });
 
 module.exports = mongoose.model('book', bookSchema);

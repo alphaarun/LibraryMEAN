@@ -12,9 +12,9 @@ genreRouter.get('/:id',controller.getGenre)
 genreRouter.post('/create',controller.createGenre)
 
 //update one genre
-genreRouter.put('/update/:id',controller.updateGenre)
+genreRouter.put('/:id',controller.updateGenre)
 
 //delete one genre
-genreRouter.delete('/delete/:id',controller.deleteGenre)
+genreRouter.delete('/:id',controller.deleteGenre)
 
 module.exports=genreRouter;

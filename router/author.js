@@ -12,9 +12,9 @@ routeAuthor.post('/create',controller.createAuthor)
 routeAuthor.get('/:id',controller.getAuthor)
 
 //update One Author
-routeAuthor.put('/update/:id',controller.updateAuthor)
+routeAuthor.put('/:id',controller.updateAuthor)
 
 //delete One Author
-routeAuthor.delete('/delete/:id',controller.deleteAuthor)
+routeAuthor.delete('/:id',controller.deleteAuthor)
 
 module.exports=routeAuthor;
